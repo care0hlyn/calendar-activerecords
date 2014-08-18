@@ -2,6 +2,10 @@ require 'rspec'
 require 'active_record'
 require 'shoulda-matchers'
 require 'event'
+require 'validates_timeliness'
+require 'chronic'
+require 'bundler/setup'
+Bundler.require(:default, :test)
 
 database_configuration = YAML::load(File.open('./db/config.yml'))
 test_configuration = database_configuration["test"]
